@@ -1,0 +1,148 @@
+# ========================================
+# .gitignore - DevXP
+# ========================================
+
+# ========================================
+# Dependencies
+# ========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ========================================
+# Environment Variables
+# ========================================
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+
+# ========================================
+# Logs
+# ========================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ========================================
+# Operating System
+# ========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+
+# ========================================
+# IDEs and Editors
+# ========================================
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*.swn
+.sublime-project
+.sublime-workspace
+*.code-workspace
+
+# ========================================
+# Build / Dist
+# ========================================
+dist/
+dist-ssr/
+build/
+*.local
+.next/
+out/
+.nuxt/
+.cache/
+.parcel-cache/
+
+# ========================================
+# Testing
+# ========================================
+coverage/
+*.coverage
+.nyc_output/
+.jest/
+
+# ========================================
+# Database
+# ========================================
+*.db
+*.sqlite
+*.sqlite3
+
+# ========================================
+# Docker
+# ========================================
+.docker/
+docker-compose.override.yml
+
+# ========================================
+# Temporary files
+# ========================================
+tmp/
+temp/
+*.tmp
+
+# ========================================
+# Package managers
+# ========================================
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ========================================
+# TypeScript
+# ========================================
+*.tsbuildinfo
+
+# ========================================
+# Vite
+# ========================================
+.vite/
+
+# ========================================
+# macOS
+# ========================================
+.AppleDouble
+.LSOverride
+
+# ========================================
+# Linux
+# ========================================
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ========================================
+# Windows
+# ========================================
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
