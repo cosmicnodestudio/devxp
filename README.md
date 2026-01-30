@@ -7,11 +7,50 @@
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ed.svg)](https://www.docker.com/)
 
 
-(Developer Experience Portal) is a centralized internal portal that improves the developer experience by providing quick and organized access to:
+DevXP is an internal developer portal designed to centralize APIs, documentation, and service status to improve developer productivity.
+
+This project simulates a real-world internal platform used by engineering teams to improve productivity and service reliability.
+
+---
+
+## The Problem
+
+In technology teams, critical information like API documentation, service status, and internal standards are scattered across different tools, reducing productivity and increasing integration errors.
+
+## What I Built
+
+I built an internal developer portal that centralizes:
 
 -  **APIs and endpoints** - Centralized access to backend services
--  **Service status** - Real-time monitoring of microservices health
+-  **Service status** - Monitoring of microservices health
 -  **Unified authentication** - JWT-based secure access system
+
+The application features JWT authentication, well-defined REST APIs, React frontend, and a fully containerized environment with Docker.
+
+## Technical Challenges
+
+- Structuring a scalable REST API using Node.js + TypeScript
+- Defining a clear data model for APIs and services
+- Integrating frontend and backend with consistent typing
+- Creating a reproducible development environment with Docker Compose
+- Standardizing logs and error handling
+
+## What I Learned from the Project
+
+- Backend code organization in layers (controller, service, repository)
+- DevXP best practices and technical documentation
+- Practical use of Docker in local environments
+- Importance of strong typing to reduce bugs
+- Structuring projects with a team-focused mindset, not just code
+
+## What I Would Improve
+
+- Implement role-based access control (RBAC)
+- Add automated testing
+- Create a simple CI/CD pipeline
+- Improve observability with metrics
+
+---
 
 ## ️ Technology Stack
 
@@ -109,16 +148,44 @@ docker-compose down
 
 ##  API Documentation
 
-### Main Endpoints
+### Authentication Endpoints
 
 ```
-POST   /api/auth/login          # Login
-POST   /api/auth/register       # Register
-GET    /api/apis                # List APIs
-POST   /api/apis                # Create API
-GET    /api/apis/:id            # API details
-PUT    /api/apis/:id            # Update API
-DELETE /api/apis/:id            # Delete API
-GET    /api/health              # Health check
-GET    /api/health/services     # External services status
+POST   /api/auth/register       # Register new user
+POST   /api/auth/login          # Login user
+GET    /api/auth/profile        # Get current user profile (protected)
+PUT    /api/auth/profile        # Update user profile (protected)
 ```
+
+### API Catalog Endpoints
+
+```
+GET    /api/apis                # List all APIs (protected)
+GET    /api/apis/statistics     # Get API statistics (protected)
+POST   /api/apis                # Create new API (protected)
+GET    /api/apis/:id            # Get API details (protected)
+PUT    /api/apis/:id            # Update API (protected)
+DELETE /api/apis/:id            # Delete API (protected)
+```
+
+### Health Check Endpoints
+
+```
+GET    /api/health                     # Basic health check (public)
+GET    /api/health/system              # System health status (protected)
+GET    /api/health/services            # All services status (protected)
+POST   /api/health/services/check      # Check all services now (protected)
+GET    /api/health/services/:id        # Check specific service (protected)
+GET    /api/health/services/:id/history # Service health history (protected)
+```
+
+### WebSocket
+
+```
+WS     /ws                      # WebSocket connection for real-time updates
+```
+
+**Events:**
+- `connected` - Connection established
+- `health-update` - Individual service status changed
+- `system-health-update` - Overall system health changed
