@@ -109,12 +109,6 @@ Edit the `.env` file with your local settings.
 ```bash
 # Start all services
 docker-compose up -d
-
-# View logs
-docker-compose logs -f
-
-# Stop services
-docker-compose down
 ```
 
 ### 4️⃣ Access the application
@@ -124,7 +118,6 @@ docker-compose down
 - **PostgreSQL:** localhost:5432
 
 ---
-
 
 ##  Features
 
@@ -189,3 +182,14 @@ WS     /ws                      # WebSocket connection for real-time updates
 - `connected` - Connection established
 - `health-update` - Individual service status changed
 - `system-health-update` - Overall system health changed
+---
+
+## Logs and Uninstall
+
+```bash
+# View logs
+docker-compose logs -f
+
+# Stop services
+docker-compose down
+```
